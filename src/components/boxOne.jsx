@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const BoxOne = () => {
+  const [isAnimating, setIsAnimating] = useState(false);
   return (
     <div className="container mt-6 mx-auto w-full h-[400px] p-4 bg-blue-100 flex flex-col justify-start items-start">
       <motion.div
@@ -10,8 +11,8 @@ const BoxOne = () => {
           opacity: 0.4,
         }}
         animate={{
-          x: 600,
-          // rotate: 90,
+          x: isAnimating ? 600 : 0,
+          rotate: isAnimating ? 360 : 0,
           opacity: 0.8,
           backgroundColor: "green",
         }}
@@ -23,6 +24,7 @@ const BoxOne = () => {
           // type: "tween",
           // duration: 3,
         }}
+        onClick={() => setIsAnimating(!isAnimating)}
       ></motion.div>
     </div>
   );
