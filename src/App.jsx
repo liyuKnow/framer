@@ -1,4 +1,5 @@
 import BoxOne from "./components/boxOne";
+import KeyFrames from "./components/KeyFrames";
 import LoadingSequence from "./components/LoadingSequence";
 import ScaleAndDrag from "./components/ScaleAndDrag";
 import Staggered from "./components/Staggered";
@@ -8,8 +9,9 @@ function App() {
     <div className="container mx-auto">
       {/* <BoxOne /> */}
       {/* <ScaleAndDrag /> */}
-      <LoadingSequence />
-      <Staggered />
+      {/* <LoadingSequence /> */}
+      {/* <Staggered /> */}
+      <KeyFrames />
     </div>
   );
 }
