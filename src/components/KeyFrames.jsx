@@ -22,12 +22,12 @@ const KeyFrames = () => {
         className="w-[300px] h-[300px] mt-6 relative p-4 bg-indigo-300"
         initial={{}}
         animate={{
-          scale: [0.8, 1, 1, 0.9, 0.8],
+          scale: [1, 1.1, 1.1, 1, 1],
           borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-          rotate: [0, 90, 360, 180, 0],
+          rotate: [0, 0, 270, 270, 0],
         }}
         transition={{
-          duration: 2,
+          duration: 5,
         }}
       ></motion.div>
     </div>
