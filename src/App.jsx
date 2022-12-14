@@ -1,6 +1,7 @@
 import BoxOne from "./components/boxOne";
 import LoadingSequence from "./components/LoadingSequence";
 import ScaleAndDrag from "./components/ScaleAndDrag";
+import Staggered from "./components/Staggered";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       {/* <BoxOne /> */}
       {/* <ScaleAndDrag /> */}
       <LoadingSequence />
+      <Staggered />
     </div>
   );
 }

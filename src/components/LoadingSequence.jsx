@@ -35,36 +35,34 @@ const LoadingSequence = () => {
   };
 
   const slowAppearPro = {
-    initial: {
-      x: "-100vw",
+    hidden: {
+      x: "-100vh",
+      opacity: 0,
     },
     visible: {
       x: 0,
+      opacity: 1,
       transition: {
         delay: 0.5,
+        when: "beforeChildren",
+        staggerChildren: 0.5,
       },
-      when: "beforeChildren",
-      staggerChildren: 0.2,
     },
   };
 
   const childVariant = {
-    initial: {
+    hidden: {
       x: -10,
       opacity: 0,
     },
     visible: {
       x: 0,
       opacity: 1,
-
-      transition: {
-        delay: 1,
-      },
     },
   };
 
-  const list = { hidden: { opacity: 0 }, avisible };
-  const item = { hidden: { x: -10, opacity: 0 } };
+  const list = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
+  const item = { hidden: { x: -10, opacity: 0 }, visible: { opacity: 1 } };
 
   return (
     <div className="container mt-6 mx-auto w-full h-screen overflow-hidden p-4 bg-blue-100 flex flex-col justify-start items-start">
@@ -82,11 +80,11 @@ const LoadingSequence = () => {
         <h1>Hello Loading Sequence</h1>
       </motion.div>
 
-      {/* <motion.div
+      <motion.div
         className="w-[300px] h-[300px] pt-10 mt-16 relative flex flex-col gap-5 justify-start items-center p-4 bg-indigo-300"
         variants={slowAppearPro}
         animate="visible"
-        initial="initial"
+        initial="hidden"
         // transition="transit"
       >
         {[0, 1, 2].map((index) => {
@@ -95,8 +93,6 @@ const LoadingSequence = () => {
               key={index}
               className="bg-white w-[40px] h-[40px] list-none"
               variants={childVariant}
-              animate="visible"
-              initial="initial"
               // animate={{
               //   x: 0,
               //   scale: 1.1,
@@ -104,11 +100,12 @@ const LoadingSequence = () => {
             ></motion.li>
           );
         })}
-      </motion.div> */}
+      </motion.div>
 
-      <motion.ul
+      {/* <motion.ul
         className="w-[300px] h-[300px] pt-10 mt-16 relative flex flex-col gap-5 justify-start items-center p-4 bg-indigo-300"
-        animate="hidden"
+        animate="visible"
+        initial="hidden"
         variants={list}
       >
         <motion.li
@@ -123,7 +120,7 @@ const LoadingSequence = () => {
           variants={item}
           className="bg-white w-[40px] h-[40px] list-none"
         />
-      </motion.ul>
+      </motion.ul> */}
     </div>
   );
 };
