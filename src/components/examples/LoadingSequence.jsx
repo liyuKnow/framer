@@ -65,7 +65,7 @@ const LoadingSequence = () => {
   const item = { hidden: { x: -10, opacity: 0 }, visible: { opacity: 1 } };
 
   return (
-    <div className="container mt-6 mx-auto w-full h-screen overflow-hidden p-4 bg-blue-100 flex flex-col justify-start items-start">
+    <div className="w-full h-screen overflow-hidden p-4 bg-blue-100 flex flex-col justify-start items-start">
       <motion.div
         className="w-[300px] h-[300px] mt-6 relative p-4 bg-indigo-300"
         variants={sequenceVariant}
